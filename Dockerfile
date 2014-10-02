@@ -14,5 +14,3 @@ ENV MYSQL_DATABASE postfix
 ENV MYSQL_PORT_3306_TCP_PORT 3306
 ENV SMTP_PORT_22_TCP_ADDR mail-1-p.piratenpartei.ch
 ENV SMTP_PORT_22_TCP_PORT 25
-
-RUN chown www-data.www-data -R  /usr/share/html/postfixadmin-2.3.7/templates_c
