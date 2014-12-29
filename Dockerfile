@@ -1,6 +1,11 @@
-FROM php:apache
+FROM ppschweiz/apache
 
-RUN apt-get update && apt-get install -y php5-mysql
+RUN apt-get update && apt-get install -y \
+        curl \
+        libapache2-mod-php5 \
+        php5-mysql \
+    && rm -rf /var/lib/apt/lists/*
+
 COPY apache2.conf /etc/apache2/apache2.conf
 COPY index.html /usr/share/html/
 ADD postfixadmin-2.3.7.tar.gz /usr/share/html/
