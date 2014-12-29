@@ -1,6 +1,6 @@
 FROM php:apache
 
-RUN apt-get update && apt-get install -y php5-mysql php5-mysqli
+RUN apt-get update && apt-get install -y php5-mysql
 COPY apache2.conf /etc/apache2/apache2.conf
 COPY index.html /usr/share/html/
 ADD postfixadmin-2.3.7.tar.gz /usr/share/html/
