@@ -6,7 +6,9 @@ RUN apt-get update && apt-get install -y \
         php5-mysql \
     && rm -rf /var/lib/apt/lists/*
 
-COPY apache2.conf /etc/apache2/apache2.conf
+COPY docker-apache.conf /etc/apache2/sites-available/admin
+RUN a2dissite 000-default && a2ensite admin
+
 COPY index.html /var/www/
 ADD postfixadmin-2.3.7.tar.gz /var/www/
 RUN ln -s /var/www/postfixadmin-2.3.7 /var/www/postfixadmin
