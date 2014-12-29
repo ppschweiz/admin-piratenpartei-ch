@@ -47,12 +47,12 @@ $CONF['default_language'] = 'en';
 // mysqli = MySQL 4.1+ 
 // pgsql = PostgreSQL
 $CONF['database_type'] = 'mysqli';
-$CONF['database_host'] = $_ENV['MYSQL_PORT_3306_TCP_ADDR'];
-$CONF['database_user'] = $_ENV['MYSQL_USERNAME'];
-$CONF['database_password'] = $_ENV['MYSQL_PASSWORD'];
-$CONF['database_name'] = $_ENV['MYSQL_DATABASE'];
+$CONF['database_host'] = getenv('MYSQL_PORT_3306_TCP_ADDR');
+$CONF['database_user'] = getenv('MYSQL_USERNAME');
+$CONF['database_password'] = getenv('MYSQL_PASSWORD');
+$CONF['database_name'] = getenv('MYSQL_DATABASE');
 $CONF['database_prefix'] = '';
-$CONF['database_port'] = $_ENV['MYSQL_PORT_3306_TCP_PORT'];
+$CONF['database_port'] = getenv('MYSQL_PORT_3306_TCP_PORT');
 
 
 // Here, if you need, you can customize table names.
@@ -81,8 +81,8 @@ $CONF['admin_email'] = 'postmaster@piratenpartei.ch';
 // Mail Server
 // Hostname (FQDN) of your mail server.
 // This is used to send email to Postfix in order to create mailboxes.
-$CONF['smtp_server'] = $_ENV['SMTP_PORT_22_TCP_ADDR'];
-$CONF['smtp_port'] = $_ENV['SMTP_PORT_22_TCP_PORT'];
+$CONF['smtp_server'] = getenv('SMTP_PORT_22_TCP_ADDR');
+$CONF['smtp_port'] = getenv('SMTP_PORT_22_TCP_PORT');
 
 // Encrypt
 // In what way do you want the passwords to be crypted?
