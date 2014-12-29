@@ -7,10 +7,10 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 COPY apache2.conf /etc/apache2/apache2.conf
-COPY index.html /usr/share/html/
-ADD postfixadmin-2.3.7.tar.gz /usr/share/html/
-RUN ln -s /usr/share/html/postfixadmin-2.3.7 /usr/share/html/postfixadmin
-COPY config.inc.php /usr/share/html/postfixadmin-2.3.7/config.inc.php
+COPY index.html /var/www/
+ADD postfixadmin-2.3.7.tar.gz /var/www/
+RUN ln -s /var/www/postfixadmin-2.3.7 /var/www/postfixadmin
+COPY config.inc.php /var/www/postfixadmin-2.3.7/config.inc.php
 
 ENV MYSQL_PORT_3306_TCP_ADDR localhost
 ENV MYSQL_USERNAME dovecot
