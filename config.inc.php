@@ -193,7 +193,7 @@ $CONF['vacation_control_admin'] = 'YES';
 // The reason for this is that when you want catch-all and normal mailboxes
 // to work you need to have the mailbox replicated in the alias table.
 // If you want to take control of these aliases as well set this to 'YES'.
-$CONF['alias_control'] = 'NO';
+$CONF['alias_control'] = 'YES';
 
 // Alias Control for admins
 // Set to 'NO' if your domain admins shouldn't be able to edit user aliases.
